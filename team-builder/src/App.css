@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.text-wrap {
+  width: 100%;
 }
 
 .App-logo {
@@ -8,8 +15,17 @@
 }
 
 .new-card {
-  width: 100%;
+  width: 75%;
+  height: 10vh;
+  margin: 0 auto;
+  margin-top: 2%;
   border: 5px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.subButton {
+  margin: 1%;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -11,12 +11,9 @@ const Form = (props) => {
         event.preventDefault();
         props.submit();
     }
-
-
-
     return (
         <form onSubmit={handleSubmit}>
-            <label>Name
+            <label><h2>Name</h2>
             <input 
             placeholder='Your name here'
             value={props.values.name}
@@ -24,7 +21,7 @@ const Form = (props) => {
             onChange={handleChange}
             />
             </label>
-            <label>Email
+            <label><h2>Email</h2>
                 <input
                     placeholder='Enter email here'
                     value={props.values.email}
@@ -33,15 +30,15 @@ const Form = (props) => {
                     />
 
             </label>
-            <label>Role
-                <input
-                    placeholder='Enter role here'
-                    value={props.values.role}
-                    name='role'
-                    onChange={handleChange}
-                    />
+            <label><h2>Role</h2>
+                    <select value={props.values.role} name='role' onChange={handleChange}>
+                        <option value=''>Choose your role:</option>
+                        <option value='Cat Wrangler'>Cat Wrangler</option>
+                        <option value='Cartographer'>Cartographer</option>
+                        <option value='Sail Maker'>Sail Maker</option>
+                    </select>
             </label>
-            <input type='submit' value='Get a team started!' />
+            <input className='subButton' disabled={!props.values.name || !props.values.email || !props.values.role} type='submit' value='Get a team started!' />
         </form>
     )
 }

@@ -16,8 +16,10 @@ const onChange = (name, value) => {
 
 return(
     <div className='App'>
-      <h1>Join the team!</h1>
-      <h3>Enter in some info about yourself!</h3>
+      <div className='text-wrap'>
+        <h1>Join the team!</h1>
+        <h3>Enter in some info about yourself!</h3>
+      </div>
     <Form 
     values={values}
     change={onChange}
@@ -27,7 +29,15 @@ return(
     {members.map((member, index) => {
       return(
         <div key={index} className='new-card'>
-          {member.name}, {member.email}, {member.role}
+          <div>
+            {member.name}
+          </div>
+          <div>
+          {member.email}
+          </div>
+          <div>
+           {member.role}
+          </div>
         </div>
       )
     })}
